@@ -7,7 +7,8 @@ WORKDIR /app
 
 COPY . /app 
 
-RUN go mod tidy
+RUN go install golang.org/x/tools/cmd/goimports && \ 
+    go install github.com/spf13/cobra-cli
 
-RUN go install golang.org/x/tools/cmd/goimports@latest
+RUN go mod tidy
 
