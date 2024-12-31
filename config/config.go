@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/goccy/go-yaml"
@@ -28,6 +27,5 @@ func (c *Config) Read() error {
 	if err != nil {
 		return err
 	}
-	fmt.Println(c.Urls)
 	return nil
 }
