@@ -18,17 +18,16 @@ func New(yamlFileName string) *Config {
 	}
 }
 
-func (c *Config) Read() {
+func (c *Config) Read() error {
 	buf, err := os.ReadFile(c.YamlFileName)
 
 	if err != nil {
-		fmt.Println(err)
-		return
+		return err
 	}
 	err = yaml.Unmarshal(buf, c)
 	if err != nil {
-		fmt.Println(err)
-		return
+		return err
 	}
 	fmt.Println(c.Urls)
+	return nil
 }
