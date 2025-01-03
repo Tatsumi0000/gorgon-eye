@@ -23,6 +23,7 @@ func (c *Config) Read() error {
 	if err != nil {
 		return err
 	}
+
 	err = yaml.Unmarshal(buf, c)
 	if err != nil {
 		return err
