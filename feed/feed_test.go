@@ -2,7 +2,7 @@ package feed
 
 import "testing"
 
-func Test_Feed(t *testing.T) {
+func Test_ParseYaml(t *testing.T) {
 	t.Run("Can not open yaml file.", func(t *testing.T) {
 		fileName := "hogehoge.yaml"
 		got, err := ParseYaml(fileName)
@@ -23,3 +23,11 @@ func Test_Feed(t *testing.T) {
 		}
 	})
 }
+
+// func Test_ParseRss(t *testing.T) {
+// 	t.Run("Debug", func(t *testing.T) {
+// 		fileName := "testdata/test_feed.yaml"
+// 		feeds, _ := ParseYaml(fileName)
+// 		ParseRss(feeds)
+// 	})
+// }
