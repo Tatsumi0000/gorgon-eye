@@ -1,10 +1,12 @@
 package feed
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 
 	"github.com/goccy/go-yaml"
+	"github.com/mmcdole/gofeed"
 )
 
 type Feed struct {
@@ -43,8 +45,11 @@ func ParseYaml(yamlFilePath string) ([]Feed, error) {
 	return feeds, nil
 }
 
-func ParseFeed() {
-
+func ParseRss(feeds []Feed) {
+	for _, feed := range feeds {
+		item, _ := gofeed.NewParser().ParseURL(feed.Url)
+		fmt.Println(item)
+	}
 }
 
 func createAbsolutePath(path string) (string, error) {
