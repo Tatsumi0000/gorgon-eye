@@ -1,6 +1,5 @@
 /*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
+Copyright © 2025 Tatsumi0000 <info@tatsumi0000.com>
 */
 package main
 
