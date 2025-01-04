@@ -2,7 +2,7 @@ dev/setup:
 	docker build . -t gorgon-eye 
 
 gofmt: 
-	docker run -it -v $(PWD):/app gorgon-eye /bin/sh -c "gofmt -w ."
+	docker run -it --rm -v $(PWD):/app gorgon-eye /bin/sh -c "gofmt -w ."
 
 dev/run:
-	docker run -it -v $(PWD):/app gorgon-eye /bin/sh 
+	docker run -it --rm -v $(PWD):/app gorgon-eye /bin/sh 
